@@ -1,0 +1,23 @@
+list:
+  path: /
+  controller: App\Controller\TaskController@index
+
+show:
+  path: /show/{id}
+  defaults:
+    id: 100
+  controller: App\Controller\TaskController@show
+  requirements:
+    id: \d+
+
+create:
+  path: /create
+  controller: App\Controller\TaskController@create
+  schemes: ['http']
+  methods: ['GET', 'POST']
+
+hello:
+  path: /hello/{name}
+  defaults:
+    name: bel inconnu
+  controller: App\Controller\HelloController@sayHello
